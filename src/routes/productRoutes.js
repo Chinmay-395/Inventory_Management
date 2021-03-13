@@ -1,30 +1,20 @@
-import { addnewProduct } from "../controllers/productController";
+import express from "express";
 
-const routes = (app) => {
-  app
-    .route("/contact")
+const router = express.Router();
 
-    // .get((req, res, next) => {
-    //   console.log("THE REQ", req);
-    //   // middleware
-    //   console.log(`Request from: ${req.originalUrl}`);
-    //   console.log(`Request type: ${req.method}`);
-    //   next();
-    // }, getContacts)
+import {
+  getProduct,
+  createProduct,
+  getProductById,
+  deleteProduct,
+  updateProduct,
+} from "../controllers/productController.js";
 
-    // Post endpoint
-    .post(addnewProduct);
+router.route("/").get(getProduct).post(createProduct);
+router
+  .route("/:id")
+  .get(getProductById)
+  .delete(deleteProduct)
+  .put(updateProduct);
 
-  // app
-  //   .route("/contact/:contactID")
-  //   // get a specific contact
-  //   .get(getContactWithID)
-
-  //   // updating a specific contact
-  //   .put(updateContact)
-
-  //   // deleting a specific contact
-  //   .delete(deleteContact);
-};
-
-export default routes;
+export default router;

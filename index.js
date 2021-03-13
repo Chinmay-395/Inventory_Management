@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 /**MODELS */
 import Location from "./src/models/locationModel.js";
 /**ROUTES */
-// import productRoutes from "./src/routes/productRoutes";
+import productRoutes from "./src/routes/productRoutes";
 import locationRoutes from "./src/routes/locationRoutes.js";
 // import pro_movRoutes from "./src/routes/pro_movRoutes";
 
@@ -26,7 +26,7 @@ mongoose.connect("mongodb://localhost/Inventory", {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // connecting my routes
-// app.use("/product", productRoutes);
+app.use("/product", productRoutes);
 app.use("/location", locationRoutes);
 // app.use("/pro_mov", pro_movRoutes);
 
