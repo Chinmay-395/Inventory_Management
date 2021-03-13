@@ -10,14 +10,19 @@ const productSchema = mongoose.Schema(
     },
     name: {
       type: String,
-      required: "Enter name of the product",
+      required: true,
+      validate: {
+        validator: (text) => {
+          return text.length > 0;
+        },
+        message: "Empty Name is not allowed",
+      },
     },
     details: {
       type: String,
     },
     summary: {
       type: String,
-      required: "Enter summary of the product",
     },
     company: {
       type: String,

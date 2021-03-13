@@ -9,8 +9,14 @@ const locationSchema = mongoose.Schema({
   },
   name: {
     type: String,
-    required: "Enter name of the location",
+    required: true,
+    validate: {
+      validator: (text) => {
+        return text.length > 0;
+      },
+      message: "Empty Name is not allowed",
+    },
   },
 });
-const Product = mongoose.model("Location", locationSchema);
-export default Product;
+const Location = mongoose.model("Location", locationSchema);
+export default Location;
