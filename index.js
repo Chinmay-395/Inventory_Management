@@ -34,21 +34,21 @@ app.use("/location", locationRoutes);
 app.use(express.static("public"));
 
 // Writing the post request
-app.post("/addLocation", (req, res) => {
-  console.log("ADDING NEW USER");
-  var locObj = {
-    location_id: req.body.location_id,
-    name: req.body.name,
-  };
-  var newLoc = new Location(locObj);
-  newLoc.save((err, location) => {
-    if (err) {
-      res.status(404).send("There is an error while adding new location");
-    } else {
-      res.status(200).json(location);
-    }
-  });
-});
+// app.post("/addLocation", (req, res) => {
+//   console.log("ADDING NEW USER");
+//   var locObj = {
+//     location_id: req.body.location_id,
+//     name: req.body.name,
+//   };
+//   var newLoc = new Location(locObj);
+//   newLoc.save((err, location) => {
+//     if (err) {
+//       res.status(404).send("There is an error while adding new location");
+//     } else {
+//       res.status(200).json(location);
+//     }
+//   });
+// });
 
 // default api endpoint
 app.get("/", (req, res) =>
