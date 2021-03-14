@@ -1,7 +1,7 @@
 import React from "react";
 // import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 // import { NavLink } from "react-router-dom";
-function SubNavBar() {
+function SubNavBar(props) {
   const [search, setSearch] = React.useState({ text: "" });
 
   const handleSearchSubmit = (e) => {
@@ -16,7 +16,7 @@ function SubNavBar() {
       >
         <nav className="mr-auto">
           <button
-            onClick={() => console.log("CLICKED")}
+            onClick={() => console.log("CLICKING")}
             className="btn btn-outline-primary m-1"
           >
             CREATE

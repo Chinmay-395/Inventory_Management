@@ -21,9 +21,6 @@ const productSchema = mongoose.Schema(
     details: {
       type: String,
     },
-    summary: {
-      type: String,
-    },
     company: {
       type: String,
     },
