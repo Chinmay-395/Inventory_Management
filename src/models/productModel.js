@@ -27,11 +27,6 @@ const productSchema = mongoose.Schema(
     company: {
       type: String,
     },
-    location: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "Location",
-    },
   },
   {
     timestamps: true,

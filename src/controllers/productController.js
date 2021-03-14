@@ -13,7 +13,6 @@ export const createProduct = asyncHandler(async (req, res) => {
     details: req.body.details,
     summary: req.body.summary,
     company: req.body.company,
-    location: req.body.location,
   });
   const createdProduct = await product.save();
   res.status(201).json(createdProduct);
@@ -42,7 +41,7 @@ export const deleteProduct = asyncHandler(async (req, res) => {
 });
 
 export const updateProduct = asyncHandler(async (req, res) => {
-  const { product_id, name, details, summary, company, location } = req.body;
+  const { product_id, name, details, summary, company } = req.body;
   console.log("THE REQ", req.body);
   const product = await Product.findById(req.params.id);
 
@@ -52,7 +51,6 @@ export const updateProduct = asyncHandler(async (req, res) => {
     product.details = details;
     product.summary = summary;
     product.company = company;
-    product.location = location;
     const updatedProduct = await product.save();
     res.json(updatedProduct);
   } else {

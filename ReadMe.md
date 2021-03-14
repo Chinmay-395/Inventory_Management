@@ -18,3 +18,19 @@ solution: create a different API endpoint wherein the from_location is the one t
 ◘ \_if you want to move things out\*
 ==> to_location will be blank
 solution: create a different API endpoint wherein the to_location is the one that will be constant(default or previously filled) & from_location will change
+
+{
+"movement_id":"mov_id_1",
+"product":"604d055a2fae5b2b58cbc25f",
+"from_location":{
+"\_id" : "604d04472fae5b2b58cbc25b",
+"location_id":"loc_id_2",
+"name":"New-York"
+},
+"to_location":{
+"\_id":"604d043b2fae5b2b58cbc25a",
+"location_id":"loc_id_1",
+"name":"London"
+}
+
+}

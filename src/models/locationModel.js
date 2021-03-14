@@ -10,6 +10,7 @@ const locationSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
     validate: {
       validator: (text) => {
         return text.length > 0;

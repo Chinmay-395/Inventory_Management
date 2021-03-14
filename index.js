@@ -7,7 +7,7 @@ import Location from "./src/models/locationModel.js";
 /**ROUTES */
 import productRoutes from "./src/routes/productRoutes";
 import locationRoutes from "./src/routes/locationRoutes.js";
-// import pro_movRoutes from "./src/routes/pro_movRoutes";
+import pro_movRoutes from "./src/routes/locationRoutes.js";
 
 const app = express();
 const PORT = 4000;
@@ -28,7 +28,7 @@ app.use(express.json());
 // connecting my routes
 app.use("/product", productRoutes);
 app.use("/location", locationRoutes);
-// app.use("/pro_mov", pro_movRoutes);
+app.use("/pro_mov", pro_movRoutes);
 
 // serving static files
 app.use(express.static("public"));
