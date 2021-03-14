@@ -1,8 +1,11 @@
 import express from "express";
 const router = express.Router();
 
-import { createProductMovement } from "../controllers/pro_movController.js";
-
-router.route("/").post(createProductMovement);
+import {
+  createProductMovement,
+  getProductMov,
+} from "../controllers/pro_movController.js";
+console.log("ATLEAST I RAN");
+router.route("/").get(getProductMov).post(createProductMovement);
 
 export default router;

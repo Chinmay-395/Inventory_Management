@@ -1,15 +1,9 @@
 import mongoose from "mongoose";
 
 const locationSchema = mongoose.Schema({
-  location_id: {
+  location_name: {
     type: String,
-    unique: true,
-    index: true,
-    required: true,
-  },
-  name: {
-    type: String,
-    required: true,
+    // required: true,
     unique: true,
     validate: {
       validator: (text) => {

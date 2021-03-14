@@ -7,11 +7,10 @@ export const getProduct = asyncHandler(async (req, res) => {
 });
 
 export const createProduct = asyncHandler(async (req, res) => {
+  console.log("THE ROUTING ISSUE");
   const product = new Product({
-    product_id: req.body.product_id,
-    name: req.body.name,
+    product_name: req.body.product_name,
     details: req.body.details,
-    summary: req.body.summary,
     company: req.body.company,
   });
   const createdProduct = await product.save();
@@ -19,7 +18,7 @@ export const createProduct = asyncHandler(async (req, res) => {
 });
 
 export const getProductById = asyncHandler(async (req, res) => {
-  console.log("THE ID THROUGH PARAM", req.params.id);
+  console.log("PRODUCT ID THROUGH PARAM", req.params.id);
   const product = await Product.findById(req.params.id);
   if (product) {
     res.json(product);
@@ -41,15 +40,13 @@ export const deleteProduct = asyncHandler(async (req, res) => {
 });
 
 export const updateProduct = asyncHandler(async (req, res) => {
-  const { product_id, name, details, summary, company } = req.body;
+  const { name, details, company } = req.body;
   console.log("THE REQ", req.body);
   const product = await Product.findById(req.params.id);
 
   if (product) {
-    product.product_id = product_id;
     product.name = name;
     product.details = details;
-    product.summary = summary;
     product.company = company;
     const updatedProduct = await product.save();
     res.json(updatedProduct);

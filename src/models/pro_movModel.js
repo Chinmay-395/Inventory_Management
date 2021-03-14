@@ -3,12 +3,6 @@ import mongoose from "mongoose";
 
 const product_movementSchema = mongoose.Schema(
   {
-    movement_id: {
-      type: String,
-      unique: true,
-      index: true,
-      required: true,
-    },
     //takes an id field
     product: {
       type: mongoose.Schema.Types.ObjectID,
@@ -18,13 +12,13 @@ const product_movementSchema = mongoose.Schema(
     //takes an id field
     from_location: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      // required: true,
       ref: "Location",
     },
     //takes an id field
     to_location: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      // required: true,
       ref: "Location",
     },
     quantity: {

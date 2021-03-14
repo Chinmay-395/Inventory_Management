@@ -2,18 +2,18 @@ import Location from "../models/locationModel";
 import asyncHandler from "express-async-handler";
 //works
 export const getLocation = asyncHandler(async (req, res) => {
+  console.log("ALL THE REQUESTS REGARDING LOCATION");
   const locations = await Location.find();
   res.json(locations);
 });
 //works
 export const createLocation = asyncHandler(async (req, res) => {
-  console.log("ADDING NEW Location", res.body);
-  var locObj = {
-    location_id: req.body.location_id,
-    name: req.body.name,
-  };
-  var newLoc = new Location(locObj);
-  const createdLocation = await newLoc.save();
+  console.log("xxxADDING NEW Location");
+
+  const location = new Location({
+    location_name: req.body.location_name,
+  });
+  const createdLocation = await location.save();
 
   res.status(200).json(createdLocation);
 });
@@ -42,13 +42,12 @@ export const deleteLocation = asyncHandler(async (req, res) => {
 
 export const updateLocation = asyncHandler(async (req, res) => {
   console.log("THE REQ-BODY", req.body);
-  const { location_id, name } = req.body;
+  const { name } = req.body;
 
   const location = await Location.findById(req.params.id);
 
   if (location) {
     location.name = name;
-    location.location_id = location_id;
 
     const updatedLocation = await location.save();
     res.json(updatedLocation);

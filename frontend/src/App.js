@@ -13,7 +13,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <ToastContainer />;
+        <ToastContainer />
         <Switch>
           <Route exact path="/product" component={ProductPage} />
           <Route exact path="/product/form" component={ProductFormPage} />
