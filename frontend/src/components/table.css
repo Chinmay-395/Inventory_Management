@@ -2,7 +2,10 @@
   overflow-y: scroll;
   height: 200px;
 }
-
+.thead-class {
+  background-color: #cbf6db;
+}
+/* 500472 */
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

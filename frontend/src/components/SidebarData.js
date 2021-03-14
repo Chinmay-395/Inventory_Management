@@ -6,26 +6,26 @@ import * as MdIcons from "react-icons/md";
 import * as GiIcons from "react-icons/gi";
 export const SidebarData = [
   {
-    title: "Home",
+    title: "HOME",
     path: "/home",
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },
   {
-    title: "DASHBOARD",
-    path: "/dashboard",
+    title: "PRODUCT",
+    path: "/product",
     icon: <RiIcons.RiDashboardFill />,
     cName: "nav-text",
   },
   {
-    title: "MY COURSES",
-    path: "/courses",
+    title: "LOCATION",
+    path: "/location",
     icon: <ImIcons.ImBooks />,
     cName: "nav-text",
   },
   {
-    title: "ACHIEVEMENTS",
-    path: "/achievements",
+    title: "MOVEMENT",
+    path: "/movement",
     icon: <GiIcons.GiAchievement />,
     cName: "nav-text",
   },

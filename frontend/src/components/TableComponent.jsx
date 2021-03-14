@@ -3,8 +3,8 @@ import "./table.css";
 function TableComponent() {
   return (
     <div id="collapse1">
-      <table class="table">
-        <thead class="thead-dark">
+      <table className="table">
+        <thead className="thead-class">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
