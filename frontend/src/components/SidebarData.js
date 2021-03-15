@@ -29,10 +29,10 @@ export const SidebarData = [
     icon: <GiIcons.GiAchievement />,
     cName: "nav-text",
   },
-  {
-    title: "FORUM",
-    path: "/forum",
-    icon: <MdIcons.MdForum />,
-    cName: "nav-text",
-  },
+  // {
+  //   title: "FORUM",
+  //   path: "/forum",
+  //   icon: <MdIcons.MdForum />,
+  //   cName: "nav-text",
+  // },
 ];

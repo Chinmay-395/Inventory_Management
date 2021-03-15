@@ -1,6 +1,7 @@
 // Inventory Management App
 import express from "express";
 import mongoose from "mongoose";
+var cors = require("cors");
 // import bodyParser from "body-parser";
 /**MODELS */
 // import Location from "./src/models/locationModel.js";
@@ -24,6 +25,7 @@ mongoose.connect("mongodb://localhost/Inventory", {
 // bodyparser setup
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 // connecting my routes
 app.use("/product", productRoutes);
 app.use("/api/promov", pro_movRoutes);
